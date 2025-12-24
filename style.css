@@ -1,0 +1,29 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:#0b0f17;color:#e8eefc}
+header,footer{max-width:1100px;margin:0 auto;padding:24px 16px}
+main{max-width:1100px;margin:0 auto;padding:0 16px 50px}
+h1{margin:0 0 6px 0;font-size:28px}
+.sub{margin:0;color:#b7c2dd}
+.card{background:#101827;border:1px solid #1f2a44;border-radius:16px;padding:16px 16px 18px;margin:14px 0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+h2{margin:0 0 12px 0;font-size:18px}
+h3{margin:14px 0 8px 0;font-size:14px;color:#cfe0ff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{border:1px solid #2a3961;background:#13203a;color:#e8eefc;padding:10px 12px;border-radius:12px;cursor:pointer;font-weight:600}
+button:disabled{opacity:.45;cursor:not-allowed}
+input,select{border:1px solid #2a3961;background:#0f1727;color:#e8eefc;padding:10px 12px;border-radius:12px}
+select{min-width:260px}
+.toggle{display:flex;gap:8px;align-items:center;color:#c7d3f4}
+.grid{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:920px){.grid{grid-template-columns:1fr 1fr}}
+.status{padding:10px 12px;border-radius:12px;background:#0f1727;border:1px solid #2a3961;color:#cfe0ff}
+.digit{font-size:42px;font-weight:800;letter-spacing:2px;padding:10px 12px;border-radius:12px;background:#0f1727;border:1px solid #2a3961;display:inline-block;min-width:90px;text-align:center}
+.meta{display:flex;flex-direction:column;gap:4px}
+.buffer{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:22px;padding:10px 12px;border-radius:12px;background:#0f1727;border:1px solid #2a3961;min-height:46px}
+.result{padding:10px 12px;border-radius:12px;background:#0f1727;border:1px dashed #3b59a3;min-height:46px}
+canvas{width:100%;height:auto;background:#0f1727;border:1px solid #2a3961;border-radius:12px}
+.tbl{width:100%;border-collapse:collapse;margin-top:8px}
+.tbl th,.tbl td{border-bottom:1px solid #1f2a44;padding:8px 6px;text-align:left;font-size:13px}
+.tbl th{color:#cfe0ff}
+.tbl tr:hover{background:#162446;cursor:pointer}
+.small{font-size:13px;line-height:1.4;color:#c1cceb}
+.hint{margin-top:8px;color:#a9b7da}

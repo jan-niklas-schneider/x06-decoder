@@ -1,0 +1,766 @@
+{
+  "schema_version": 1,
+  "signal": {
+    "name": "X06 6-tone MFSK",
+    "tone_duration_ms": 333.333,
+    "pause_ms": 1320,
+    "mapping": {
+      "1": 815,
+      "2": 845,
+      "3": 875,
+      "4": 910,
+      "5": 950,
+      "6": 990
+    },
+    "tolerance_hz": 5
+  },
+  "stations": [
+    {
+      "sequence": "124356",
+      "target": "Embassy Dushanbe",
+      "daytime": [
+        10422,
+        11514,
+        13965,
+        14922
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "125643",
+      "target": "Embassy Ulaanbaatar",
+      "daytime": [
+        11081,
+        13524,
+        14615,
+        15989,
+        19875
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "134265",
+      "target": "Embassy Tunis",
+      "daytime": [
+        12134,
+        13985,
+        16116,
+        18245
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "145632",
+      "target": "Embassy Algiers",
+      "daytime": [
+        13410,
+        14414,
+        15810,
+        17430
+      ],
+      "nighttime": [
+        6866,
+        8169,
+        9163,
+        10114
+      ]
+    },
+    {
+      "sequence": "153624",
+      "target": "Embassy Damascus",
+      "daytime": [
+        11620,
+        12133,
+        13843,
+        14550,
+        16153
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "154263",
+      "target": "Embassy Rome",
+      "daytime": [
+        11085,
+        12149,
+        13401,
+        14358,
+        15687
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "156234",
+      "target": "Embassy Kampala",
+      "daytime": [
+        11525,
+        13940,
+        14871,
+        17475,
+        20690
+      ],
+      "nighttime": [
+        5772,
+        7635,
+        9235
+      ]
+    },
+    {
+      "sequence": "162543",
+      "target": "Embassy Nicosia",
+      "daytime": [
+        10508,
+        12219,
+        13448,
+        14447,
+        15973
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "164253",
+      "target": "Embassy Addis Ababa",
+      "daytime": [
+        12120,
+        13924,
+        14655,
+        18177,
+        20334
+      ],
+      "nighttime": [
+        7862,
+        9128
+      ]
+    },
+    {
+      "sequence": "164532",
+      "target": "Embassy Dublin",
+      "daytime": [
+        10193,
+        11411,
+        13506,
+        16223
+      ],
+      "nighttime": [
+        6962,
+        7527,
+        8131,
+        9163
+      ]
+    },
+    {
+      "sequence": "165324",
+      "target": "Embassy Vienna",
+      "daytime": [
+        10161,
+        11638,
+        12122,
+        13452
+      ],
+      "nighttime": [
+        6960,
+        7411,
+        8078
+      ]
+    },
+    {
+      "sequence": "165423",
+      "target": "Embassy Brussels",
+      "daytime": [
+        9450,
+        11462,
+        12157,
+        13411,
+        15836
+      ],
+      "nighttime": [
+        8005
+      ]
+    },
+    {
+      "sequence": "213546",
+      "target": "Embassy Islamabad",
+      "daytime": [
+        10283,
+        11438,
+        12168,
+        13954,
+        14425
+      ],
+      "nighttime": [
+        5412
+      ]
+    },
+    {
+      "sequence": "214356",
+      "target": "Embassy Amman",
+      "daytime": [
+        12186,
+        13548,
+        14501,
+        17430,
+        18346
+      ],
+      "nighttime": [
+        8180,
+        9253
+      ]
+    },
+    {
+      "sequence": "215346",
+      "target": "Consulate General Mumbai",
+      "daytime": [
+        12207,
+        13979,
+        14650,
+        16115
+      ],
+      "nighttime": [
+        7560,
+        9076,
+        10202
+      ]
+    },
+    {
+      "sequence": "216354",
+      "target": "Consulate General Chennai",
+      "daytime": [
+        11125,
+        12091,
+        13961,
+        14970,
+        17470,
+        20813
+      ],
+      "nighttime": [
+        9351
+      ]
+    },
+    {
+      "sequence": "216435",
+      "target": "Embassy Dhaka",
+      "daytime": [
+        11095,
+        13510,
+        15920,
+        19610
+      ],
+      "nighttime": [
+        10190
+      ]
+    },
+    {
+      "sequence": "231654",
+      "target": "Embassy Abuja",
+      "daytime": [
+        15676,
+        16103,
+        17506,
+        18245
+      ],
+      "nighttime": [
+        9174,
+        11467
+      ]
+    },
+    {
+      "sequence": "241563",
+      "target": "Consulate General Karachi",
+      "daytime": [
+        12200,
+        14720,
+        16320
+      ],
+      "nighttime": [
+        6850,
+        7680,
+        8180,
+        10815
+      ]
+    },
+    {
+      "sequence": "246531",
+      "target": "Embassy Accra",
+      "daytime": [
+        14812,
+        17421,
+        18206,
+        20336
+      ],
+      "nighttime": [
+        9386
+      ]
+    },
+    {
+      "sequence": "256134",
+      "target": "Embassy Abidjan",
+      "daytime": [
+        12055,
+        15828,
+        17463,
+        19611,
+        20605
+      ],
+      "nighttime": [
+        7833
+      ]
+    },
+    {
+      "sequence": "256341",
+      "target": "Embassy Beirut",
+      "daytime": [
+        10145,
+        10684,
+        12150,
+        13838,
+        14405,
+        15819
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "261453",
+      "target": "Embassy Cairo",
+      "daytime": [
+        11136,
+        13530,
+        14865,
+        15710,
+        16060
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "263145",
+      "target": "Embassy Prague",
+      "daytime": [
+        10214,
+        11561,
+        13441,
+        14812
+      ],
+      "nighttime": [
+        6948,
+        7961,
+        9127
+      ]
+    },
+    {
+      "sequence": "314265",
+      "target": "Embassy Antananarivo",
+      "daytime": [
+        12195,
+        16276,
+        17517,
+        19511,
+        21825
+      ],
+      "nighttime": [
+        7740,
+        8105,
+        10731
+      ]
+    },
+    {
+      "sequence": "324615",
+      "target": "Embassy Madrid",
+      "daytime": [
+        11030,
+        12094,
+        13556,
+        14570,
+        16219
+      ],
+      "nighttime": [
+        10380
+      ]
+    },
+    {
+      "sequence": "325614",
+      "target": "Embassy Nairobi",
+      "daytime": [
+        14942,
+        16188,
+        17454,
+        18523,
+        20655
+      ],
+      "nighttime": [
+        11472,
+        12118
+      ]
+    },
+    {
+      "sequence": "351264",
+      "target": "Embassy Abu Dhabi",
+      "daytime": [
+        12060,
+        14934,
+        14947,
+        17534,
+        18060,
+        19858
+      ],
+      "nighttime": [
+        5932,
+        7691,
+        10255,
+        11010
+      ]
+    },
+    {
+      "sequence": "352416",
+      "target": "Embassy Dar es Salaam",
+      "daytime": [
+        12089,
+        13951,
+        14950,
+        16132,
+        18575,
+        19405
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "356412",
+      "target": "Embassy Berlin",
+      "daytime": [
+        9288,
+        10653,
+        12177
+      ],
+      "nighttime": [
+        4912,
+        7604
+      ]
+    },
+    {
+      "sequence": "361245",
+      "target": "Embassy Copenhagen",
+      "daytime": [
+        9158,
+        12215,
+        14501
+      ],
+      "nighttime": [
+        4542,
+        6986
+      ]
+    },
+    {
+      "sequence": "362154",
+      "target": "Embassy Athens",
+      "daytime": [
+        10815,
+        12138,
+        13465,
+        14631,
+        17445
+      ],
+      "nighttime": [
+        8062
+      ]
+    },
+    {
+      "sequence": "364152",
+      "target": "Embassy New Delhi",
+      "daytime": [
+        10452,
+        11492,
+        12177,
+        13467,
+        14683,
+        15656
+      ],
+      "nighttime": [
+        9162
+      ]
+    },
+    {
+      "sequence": "412356",
+      "target": "Embassy Budapest",
+      "daytime": [
+        9061,
+        10814,
+        11483,
+        13369
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "421635",
+      "target": "Embassy Oslo",
+      "daytime": [
+        7426,
+        9215,
+        10127,
+        11424,
+        11537,
+        13423
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "431625",
+      "target": "Embassy Warsaw",
+      "daytime": [
+        9923,
+        10372,
+        12109
+      ],
+      "nighttime": [
+        6893
+      ]
+    },
+    {
+      "sequence": "432516",
+      "target": "Embassy Bern",
+      "daytime": [
+        10453,
+        11562,
+        12152,
+        14377
+      ],
+      "nighttime": [
+        5760,
+        7823
+      ]
+    },
+    {
+      "sequence": "435621",
+      "target": "Embassy Maputo",
+      "daytime": [
+        12066,
+        14935,
+        15651,
+        17444,
+        18591,
+        20950
+      ],
+      "nighttime": [
+        8147
+      ]
+    },
+    {
+      "sequence": "436512",
+      "target": "Embassy Harare",
+      "daytime": [
+        11413,
+        15866,
+        16277,
+        17468
+      ],
+      "nighttime": [
+        10196
+      ]
+    },
+    {
+      "sequence": "452163",
+      "target": "Embassy Kabul",
+      "daytime": [
+        10181,
+        11605,
+        12130,
+        13481,
+        14595
+      ],
+      "nighttime": [
+        6818,
+        8041
+      ]
+    },
+    {
+      "sequence": "463125",
+      "target": "Embassy Rabat",
+      "daytime": [
+        12224,
+        13517,
+        16117,
+        18060
+      ],
+      "nighttime": [
+        5838,
+        6870,
+        7820,
+        8123,
+        9105
+      ]
+    },
+    {
+      "sequence": "465132",
+      "target": "Embassy Sofia",
+      "daytime": [
+        10172,
+        11153,
+        13419
+      ],
+      "nighttime": [
+        7516
+      ]
+    },
+    {
+      "sequence": "521634",
+      "target": "Embassy Bucharest",
+      "daytime": [
+        12126,
+        13854,
+        14419,
+        16324
+      ],
+      "nighttime": [
+        5775
+      ]
+    },
+    {
+      "sequence": "532614",
+      "target": "Embassy Paris",
+      "daytime": [
+        10270,
+        11438,
+        12199,
+        13395,
+        14392
+      ],
+      "nighttime": [
+        4975,
+        8081,
+        9160
+      ]
+    },
+    {
+      "sequence": "534216",
+      "target": "Embassy Baghdad",
+      "daytime": [
+        10767,
+        11545,
+        13420
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "542136",
+      "target": "Embassy Beijing",
+      "daytime": [
+        12107,
+        13439,
+        14861,
+        16257,
+        17523
+      ],
+      "nighttime": [
+        5826,
+        8175
+      ]
+    },
+    {
+      "sequence": "561243",
+      "target": "Embassy Helsinki",
+      "daytime": [
+        7988,
+        9065,
+        9388
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "564213",
+      "target": "Consulate General Bonn",
+      "daytime": [
+        10475,
+        11447,
+        12158,
+        13338,
+        14442
+      ],
+      "nighttime": [
+        5815,
+        7545
+      ]
+    },
+    {
+      "sequence": "612534",
+      "target": "Embassy Ashgabat",
+      "daytime": [
+        11025,
+        12100,
+        13510,
+        14675,
+        16317,
+        17520
+      ],
+      "nighttime": [
+        5818,
+        6884,
+        7975,
+        9253
+      ]
+    },
+    {
+      "sequence": "615243",
+      "target": "Permanent Mission Geneva",
+      "daytime": [
+        12213,
+        13575,
+        14863
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "621543",
+      "target": "Embassy Lisbon",
+      "daytime": [
+        9263,
+        11126,
+        12167,
+        14944,
+        15878,
+        18660
+      ],
+      "nighttime": [
+        6938,
+        7870
+      ]
+    },
+    {
+      "sequence": "625413",
+      "target": "Embassy Tel Aviv",
+      "daytime": [
+        12194,
+        13547,
+        14824
+      ],
+      "nighttime": []
+    },
+    {
+      "sequence": "641523",
+      "target": "Embassy Lusaka",
+      "daytime": [
+        14825,
+        17511,
+        18750,
+        20675,
+        23355
+      ],
+      "nighttime": [
+        7532
+      ]
+    },
+    {
+      "sequence": "645321",
+      "target": "Consulate General Ho Chi Minh City",
+      "daytime": [
+        12178,
+        16103,
+        18197,
+        20837
+      ],
+      "nighttime": [
+        5785,
+        6877,
+        7773,
+        9041,
+        10957
+      ]
+    }
+  ]
+}
