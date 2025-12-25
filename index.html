@@ -3,130 +3,110 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X06 Tonfolgen-Decoder (v4)</title>
+  <title>X06 Tonfolgen-Decoder (v5)</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-  <h1>X06 Tonfolgen‑Decoder</h1>
-  <p class="sub">Live‑Decoder (Mikrofon) + Waterfall + Test‑Signal‑Generator. Mit Frequenzanzeige pro erkannter Ziffer.</p>
+<header class="topbar">
+  <div class="brand">
+    <div class="title">X06 Tonfolgen‑Decoder</div>
+    <div class="subtitle">Live‑Decoder + Waterfall + Generator · alles auf einem Screen</div>
+  </div>
+  <div class="top-controls">
+    <button id="btnStart">Start</button>
+    <button id="btnStop" disabled>Stop</button>
+  </div>
 </header>
 
-<main>
-  <section class="card">
-    <h2>Audio‑Input</h2>
-    <div class="row">
-      <label class="small">Eingang:</label>
-      <select id="selInput"></select>
-      <button id="btnRefresh">↻ Geräte</button>
-      <label class="toggle small">
-        <input type="checkbox" id="chkFft8192" />
-        <span>FFT 8192 (mehr Auflösung, mehr CPU)</span>
-      </label>
-    </div>
-    <p class="hint small">Tipp: Nach dem ersten „Start“ zeigt der Browser oft erst die echten Gerätenamen.</p>
-  </section>
-
-  <section class="card">
-    <h2>Live‑Decoder</h2>
-    <div class="row">
-      <button id="btnStart">🎙️ Start</button>
-      <button id="btnStop" disabled>⏹️ Stop</button>
-
-      <label class="toggle small">
-        <input type="checkbox" id="chkAutolock" checked />
-        <span>Stabilitäts‑Lock</span>
-      </label>
-
-      <label class="toggle small">
-        <input type="checkbox" id="chkWaterfall" checked />
-        <span>Waterfall</span>
-      </label>
-
-      <label class="small">Plot‑FPS</label>
-      <input id="rngFps" type="range" min="5" max="60" value="20" />
-      <span class="small" id="fpsVal">20</span>
-
-      <label class="small">Gate</label>
-      <input id="rngGate" type="range" min="60" max="240" value="170" />
-      <span class="small" id="gateVal">170</span>
+<main class="layout">
+  <section class="panel">
+    <div class="group">
+      <div class="group-title">Audio</div>
+      <div class="row">
+        <select id="selInput"></select>
+        <button id="btnRefresh" class="ghost">↻</button>
+      </div>
+      <div class="row">
+        <label class="toggle"><input type="checkbox" id="chkFft8192" />FFT 8192</label>
+        <label class="toggle"><input type="checkbox" id="chkAutolock" checked />Lock</label>
+        <label class="toggle"><input type="checkbox" id="chkWaterfall" checked />Waterfall</label>
+      </div>
+      <div class="row">
+        <label class="small">FPS</label>
+        <input id="rngFps" type="range" min="5" max="60" value="20" />
+        <span class="small" id="fpsVal">20</span>
+      </div>
+      <div class="row">
+        <label class="small">Gate</label>
+        <input id="rngGate" type="range" min="60" max="240" value="170" />
+        <span class="small" id="gateVal">170</span>
+      </div>
     </div>
 
-    <div class="grid">
-      <div>
-        <h3>Status</h3>
-        <div id="status" class="status">bereit</div>
+    <div class="group">
+      <div class="group-title">Decoder</div>
+      <div class="status" id="status">bereit</div>
 
-        <h3>Erkannte Ziffer</h3>
-        <div class="row">
-          <div id="digit" class="digit">—</div>
-          <div class="meta">
-            <div class="small">Frequenz: <b id="freq">—</b></div>
-            <div class="small">Stärke: <b id="strength">—</b></div>
-          </div>
+      <div class="row wrap">
+        <div class="digit" id="digit">—</div>
+        <div class="meta">
+          <div class="small">Frequenz <b id="freq">—</b></div>
+          <div class="small">Stärke <b id="strength">—</b></div>
         </div>
-
-        <h3>Sequenz‑Puffer</h3>
-        <div id="buffer" class="buffer">—</div>
-
-        <h3>Ergebnis</h3>
-        <div id="result" class="result">—</div>
       </div>
 
-      <div>
-        <h3>Spektrum (Band)</h3>
-        <canvas id="spec" width="900" height="220"></canvas>
+      <div class="buffer" id="buffer">—</div>
+      <div class="result" id="result">—</div>
+      <div class="detail" id="stationDetail">—</div>
+      <div class="hint" id="qualityHint">Start drücken und Mikrofonzugriff erlauben.</div>
+    </div>
 
-        <h3>Waterfall</h3>
-        <canvas id="wf" width="900" height="220"></canvas>
+    <div class="group grow">
+      <div class="group-title">Generator</div>
+      <div class="row">
+        <input id="genSeq" placeholder="123456" inputmode="numeric" />
+        <button id="btnGenPlay" class="ghost">Play</button>
+        <button id="btnGenStop" class="ghost" disabled>Stop</button>
+      </div>
+      <div class="row">
+        <label class="small">Ton</label><input id="genToneMs" type="number" min="60" max="2000" value="333" />
+        <label class="small">Gap</label><input id="genGapMs" type="number" min="0" max="2000" value="40" />
+      </div>
+      <div class="row">
+        <label class="small">Vol</label><input id="genVol" type="range" min="0.05" max="0.9" step="0.01" value="0.35" />
+        <label class="toggle"><input type="checkbox" id="genLoop" />Loop</label>
+      </div>
+      <div class="hint" id="genHint">Tipp: Für realistische Tests virtuelles Audiokabel verwenden.</div>
+    </div>
+  </section>
 
-        <div class="hint small" id="qualityHint">Start drücken und Mikrofonzugriff erlauben.</div>
+  <section class="panel">
+    <div class="plots">
+      <div class="plot">
+        <div class="plot-title">Spektrum</div>
+        <canvas id="spec"></canvas>
+      </div>
+      <div class="plot">
+        <div class="plot-title">Waterfall</div>
+        <canvas id="wf"></canvas>
       </div>
     </div>
-  </section>
 
-  <section class="card">
-    <h2>Test‑Signal‑Generator</h2>
-    <p class="small">Erzeugt die Tonfolge lokal im Browser (kein Upload). Ideal zum Testen.</p>
-    <div class="row">
-      <input id="genSeq" placeholder="z.B. 124356" inputmode="numeric" />
-      <label class="small">Ton‑ms</label>
-      <input id="genToneMs" type="number" min="60" max="2000" value="333" />
-      <label class="small">Pause‑ms</label>
-      <input id="genGapMs" type="number" min="0" max="2000" value="40" />
-      <label class="small">Lautstärke</label>
-      <input id="genVol" type="range" min="0.05" max="0.9" step="0.01" value="0.35" />
-      <button id="btnGenPlay">▶ Play</button>
-      <button id="btnGenStop" disabled>⏹️ Stop</button>
-      <label class="toggle small">
-        <input type="checkbox" id="genLoop" />
-        <span>Loop</span>
-      </label>
+    <div class="group db">
+      <div class="group-title">Datenbank</div>
+      <div class="row">
+        <input id="dbSearch" placeholder="Suche…" />
+        <button id="dbPrev" class="ghost">◀</button>
+        <button id="dbNext" class="ghost">▶</button>
+        <span id="dbPageInfo" class="small"></span>
+      </div>
+      <div class="dbwrap">
+        <table class="tbl" id="dbTable"></table>
+      </div>
+      <div class="hint small">Klick auf Eintrag → Sequenz in Generator.</div>
     </div>
-    <div class="hint small" id="genHint">Hinweis: Für „echten“ Decoder‑Test kannst du den Generator auch auf einen virtuellen Eingang routen.</div>
-  </section>
-
-  <section class="card">
-    <h2>Datenbank</h2>
-    <div class="row">
-      <input id="dbSearch" placeholder="Suche (Target / Sequenz)" />
-      <button id="dbPrev">◀</button>
-      <button id="dbNext">▶</button>
-      <span id="dbPageInfo" class="small"></span>
-    </div>
-    <table class="tbl" id="dbTable"></table>
-    <p class="hint small">Klick auf eine Zeile übernimmt die Sequenz in den Generator.</p>
-  </section>
-
-  <section class="card">
-    <h2>Frequenz‑Mapping</h2>
-    <table class="tbl" id="mapTable"></table>
   </section>
 </main>
-
-<footer>
-  <span class="small">© 2025 — Browser‑Decoder v4</span>
-</footer>
 
 <script src="app.js"></script>
 </body>
