@@ -3,6 +3,8 @@
 Browserbasierter Live-Decoder für 6-Ton-Sequenzen (1–6) mit Spektrum- und Waterfall-Anzeige, Mikrofon-Eingang, integrierter Day/Night-Datenbank und Test-Signal-Generator.
 Das Projekt läuft vollständig im Browser (Web Audio API) und ist für GitHub Pages geeignet.
 
+![Screenshot der Web-App](screenshot.png)
+
 ## Live-Demo (GitHub Pages)
 
 https://jan-niklas-schneider.github.io/x06-decoder/
@@ -27,7 +29,6 @@ https://jan-niklas-schneider.github.io/x06-decoder/
 - Einstellbare Tonlänge, Pause und Lautstärke
 - Loop-Funktion
 - Geeignet für Offline- und Entwicklungstests
-
 
 ## Nutzung
 
@@ -56,9 +57,11 @@ https://jan-niklas-schneider.github.io/x06-decoder/
 
 ## Lokale Entwicklung
 
+```bash
 git clone https://github.com/jan-niklas-schneider/x06-decoder.git
-cd DEIN_REPO_NAME
+cd x06-decoder
 python -m http.server 8000
+```
 
 Anschließend im Browser öffnen:
 http://localhost:8000
@@ -68,7 +71,6 @@ http://localhost:8000
 - Echo Cancellation, Noise Suppression und Auto Gain Control deaktivieren
 - Ruhige Umgebung verwenden
 - Direktes Einspeisen ist stabiler als Lautsprecher-zu-Mikrofon
-
 
 ## Lizenz
 
