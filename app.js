@@ -1,5 +1,7 @@
-// X06 Decoder v5 (one-screen layout + spectrum visibility fix + HiDPI canvas resize)
-// + Highlight DB row on detected station
+// X06 Tone Sequence Decoder
+// (c) 2025 Jan-Niklas Schneider
+// Licensed under the MIT License
+
 
 const UI = {
   btnStart: document.getElementById("btnStart"),

@@ -2,6 +2,9 @@
 :root{
   --bg:#0b0f17;--panel:#101827;--border:#1f2a44;--muted:#b7c2dd;--text:#e8eefc;--hint:#a9b7da;
   --btn:#13203a;--btn2:#0f1727;
+
+  /* Reserve space for fixed footer (height + breathing room) */
+  --footer-reserve: 25px;
 }
 html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
 body{overflow:hidden}
@@ -25,8 +28,11 @@ select,input{
 .small{font-size:12px;color:var(--muted)}
 .hint{margin-top:6px;font-size:12px;color:var(--hint)}
 .layout{
-  height:calc(100vh - 56px);
-  display:grid;gap:10px;padding:10px;
+  /* leave room for footer so content never overlaps */
+  height:calc(100vh - 56px - var(--footer-reserve));
+  display:grid;gap:10px;
+  padding:10px;
+  padding-bottom:calc(10px + var(--footer-reserve));
   grid-template-columns:1fr;
 }
 .panel{
@@ -65,16 +71,38 @@ canvas{flex:1;min-height:0;width:100%;border-radius:12px;background:var(--btn2);
 
 .footer {
   position: fixed;
-  left: 10px;
-  bottom: 8px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 48px;
+  padding: 0 12px;
+
   display: flex;
-  gap: 10px;
   align-items: center;
-  font-size: 11px;
-  color: #7f8fb3;
+  justify-content: space-between;
+
+  background: rgba(16, 24, 39, 0.75);
+  backdrop-filter: blur(8px);
+
+  border-top: 1px solid var(--border);
+
+  font-size: 12px;
+  color: var(--muted);
+  z-index: 20;
+}
+
+.footer-left {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   opacity: 0.85;
-  z-index: 10;
-  user-select: none;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .footer .gitlink {
@@ -84,4 +112,14 @@ canvas{flex:1;min-height:0;width:100%;border-radius:12px;background:var(--btn2);
 
 .footer .gitlink:hover {
   text-decoration: underline;
+}
+
+.footer .badge {
+  height: 14px;
+  opacity: 0.6;
+}
+
+.footer .counter {
+  height: 14px;
+  opacity: 0.55;
 }
