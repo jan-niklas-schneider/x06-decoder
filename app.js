@@ -77,7 +77,7 @@ function setBuffer() { UI.buffer.textContent = seqDigits.length ? seqDigits.join
 
 function renderResult(seq, item) {
   if (!seq) { UI.result.textContent = "—"; return; }
-  if (!item) { UI.result.innerHTML = `<b>${seq}</b> → unbekannt`; return; }
+  if (!item) { UI.result.innerHTML = `<b>${seq}</b> → unknown`; return; }
   UI.result.innerHTML = `<b>${seq}</b> → <b>${esc(item.target)}</b>`;
 }
 
@@ -318,7 +318,7 @@ function tick() {
     if (det.digit && stableMs >= COMMIT_AFTER_MS && !alreadyCommitted) { commitDigit(det.digit, now); }
   }
 
-  if (seqDigits.length && (now - lastNonNullTs) > GAP_RESET_MS) { resetDecoder(); setStatus("bereit (Reset nach Pause)"); }
+  if (seqDigits.length && (now - lastNonNullTs) > GAP_RESET_MS) { resetDecoder(); setStatus("ready (reset after pause)"); }
   if (seqDigits.length === 6 && (now - lastNonNullTs) > PAUSE_DETECT_MS) { finalizeIfComplete(); seqDigits = []; setBuffer(); }
 
   requestAnimationFrame(tick);
@@ -337,7 +337,7 @@ async function refreshInputs() {
   }
   if (!ins.length) {
     const o = document.createElement("option");
-    o.value = ""; o.textContent = "Keine Audioinputs gefunden";
+    o.value = ""; o.textContent = "No audio inputs found";
     UI.selInput.appendChild(o);
   }
 }
@@ -351,7 +351,7 @@ async function start() {
   plotFps = Number(UI.rngFps.value || 20);
   MIN_STRENGTH = Number(UI.rngGate.value || 170);
 
-  setStatus("Mikrofon wird gestartet …");
+  setStatus("Microphone is starting up...");
   try {
     const deviceId = UI.selInput.value || undefined;
     micStream = await navigator.mediaDevices.getUserMedia({
@@ -376,13 +376,13 @@ async function start() {
     UI.btnStart.disabled = true;
     UI.btnStop.disabled = false;
     running = true;
-    setStatus("läuft");
-    UI.qualityHint.textContent = "Spektrum ist jetzt sichtbar. Wenn es ruckelt: FPS runter oder Waterfall aus.";
+    setStatus("running");
+    UI.qualityHint.textContent = "";
     tick();
     await refreshInputs();
   } catch (e) {
     console.error(e);
-    setStatus("Fehler: Mikrofonzugriff fehlgeschlagen");
+    setStatus("Error: Microphone access failed");
     UI.qualityHint.textContent = String(e?.message || e);
     stop();
   }
@@ -397,7 +397,7 @@ function stop() {
   audioCtx = null; analyser = null; srcNode = null; fftByte = null;
   UI.btnStart.disabled = false;
   UI.btnStop.disabled = true;
-  setStatus("gestoppt");
+  setStatus("stopped");
   setDigit(null); setFreq(null); setStrength(null);
 }
 
@@ -435,7 +435,7 @@ function renderDbTable() {
   }).join("");
 
   UI.dbTable.innerHTML = `
-    <thead><tr><th>Seq</th><th>Target</th><th>Day</th><th>Night</th></tr></thead>
+    <thead><tr><th>Sequence</th><th>Target</th><th>Daytime frequencies</th><th>Nighttime frequencies</th></tr></thead>
     <tbody>${rows || `<tr><td colspan="4">Keine Treffer</td></tr>`}</tbody>
   `;
 
@@ -483,21 +483,21 @@ async function playSequenceOnce(seq, toneMs, gapMs, vol) {
     if (!UI.genLoop.checked) {
       UI.btnGenPlay.disabled = false;
       UI.btnGenStop.disabled = true;
-      UI.genHint.textContent = "fertig";
+      UI.genHint.textContent = "ready";
     }
   };
 }
 
 async function startGenerator() {
   const seq = (UI.genSeq.value || "").trim();
-  if (!/^[1-6]{6}$/.test(seq)) { UI.genHint.textContent = "Bitte 6 Ziffern, nur 1–6."; return; }
+  if (!/^[1-6]{6}$/.test(seq)) { UI.genHint.textContent = "Please enter 6 digits, only 1–6."; return; }
   const toneMs = Math.max(60, Math.min(2000, Number(UI.genToneMs.value || 333)));
   const gapMs = Math.max(0, Math.min(2000, Number(UI.genGapMs.value || 40)));
   const vol = Math.max(0.05, Math.min(0.9, Number(UI.genVol.value || 0.35)));
 
   UI.btnGenPlay.disabled = true;
   UI.btnGenStop.disabled = false;
-  UI.genHint.textContent = "spielt…";
+  UI.genHint.textContent = "playing…";
 
   const schedule = async () => {
     await playSequenceOnce(seq, toneMs, gapMs, vol);
@@ -513,7 +513,7 @@ function stopGenerator() {
   genOsc = null; genGain = null;
   UI.btnGenPlay.disabled = false;
   UI.btnGenStop.disabled = true;
-  UI.genHint.textContent = "gestoppt";
+  UI.genHint.textContent = "stopped";
 }
 
 // --- init ---
@@ -549,5 +549,5 @@ loadDb().then(refreshInputs).then(() => {
   UI.fpsVal.textContent = String(UI.rngFps.value || 20);
   UI.gateVal.textContent = String(UI.rngGate.value || 170);
   ensureCanvases();
-  setStatus("bereit");
-}).catch(e => { console.error(e); setStatus("Fehler: db.json konnte nicht geladen werden"); });
+  setStatus("ready");
+}).catch(e => { console.error(e); setStatus("Error: db.json could not be loaded."); });

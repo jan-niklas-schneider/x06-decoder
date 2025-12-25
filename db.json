@@ -16,6 +16,28 @@
   },
   "stations": [
     {
+      "sequence": "123456",
+      "target": "Test Sequence",
+      "daytime": [],
+      "nighttime": []
+    },
+    {
+      "sequence": "111666",
+      "target": "Test Sequence",
+      "daytime": [],
+      "nighttime": []
+    },{
+      "sequence": "121212",
+      "target": "Test Sequence",
+      "daytime": [],
+      "nighttime": []
+    },{
+      "sequence": "111111",
+      "target": "Test Sequence",
+      "daytime": [],
+      "nighttime": []
+    },
+    {
       "sequence": "124356",
       "target": "Embassy Dushanbe",
       "daytime": [

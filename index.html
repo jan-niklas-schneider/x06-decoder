@@ -50,14 +50,14 @@
       <div class="row wrap">
         <div class="digit" id="digit">—</div>
         <div class="meta">
-          <div class="small">Frequenz <b id="freq">—</b></div>
-          <div class="small">Stärke <b id="strength">—</b></div>
+          <div class="small">Frequence <b id="freq">—</b></div>
+          <div class="small">Strength <b id="strength">—</b></div>
         </div>
       </div>
 
       <div class="buffer" id="buffer">—</div>
       <div class="result" id="result">—</div>
-      <div class="hint" id="qualityHint">Start drücken und Mikrofonzugriff erlauben.</div>
+      <div class="hint" id="qualityHint">Press Start and allow microphone access.</div>
     </div>
 
     <div class="group grow">
@@ -68,21 +68,36 @@
         <button id="btnGenStop" class="ghost" disabled>Stop</button>
       </div>
       <div class="row">
-        <label class="small">Ton</label><input id="genToneMs" type="number" min="60" max="2000" value="333" />
+        <label class="small">Tone</label><input id="genToneMs" type="number" min="60" max="2000" value="333" />
         <label class="small">Gap</label><input id="genGapMs" type="number" min="0" max="2000" value="40" />
       </div>
       <div class="row">
         <label class="small">Vol</label><input id="genVol" type="range" min="0.05" max="0.9" step="0.01" value="0.35" />
         <label class="toggle"><input type="checkbox" id="genLoop" />Loop</label>
       </div>
-      <div class="hint" id="genHint">Tipp: Für realistische Tests virtuelles Audiokabel verwenden.</div>
+      <div class="hint" id="genHint"></div>
+    </div>
+
+    <div class="group">
+      <div class="group-title">Info</div>
+      <div class="hint">
+        Browser-based decoder for 6-tone sequences with live spectrum and waterfall visualization.
+        <br>
+        Select an audio input, press Start, and detected sequences are automatically
+        matched against the station database.
+        <br><br>
+        <a href="https://github.com/jan-niklas-schneider/x06-decoder"
+          target="_blank" rel="noopener">
+          User guide & documentation
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="panel">
     <div class="plots">
       <div class="plot">
-        <div class="plot-title">Spektrum</div>
+        <div class="plot-title">Spectrum</div>
         <canvas id="spec"></canvas>
       </div>
       <div class="plot">
@@ -92,7 +107,7 @@
     </div>
 
     <div class="group db">
-      <div class="group-title">Datenbank</div>
+      <div class="group-title">Database</div>
       <div class="row">
         <input id="dbSearch" placeholder="Suche…" />
         <button id="dbPrev" class="ghost">◀</button>
@@ -102,7 +117,6 @@
       <div class="dbwrap">
         <table class="tbl" id="dbTable"></table>
       </div>
-      <div class="hint small">Klick auf Eintrag → Sequenz in Generator.</div>
     </div>
   </section>
 </main>
