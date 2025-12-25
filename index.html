@@ -3,17 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X06 Tonfolgen-Decoder (v5)</title>
+  <title>X06 Decoder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header class="topbar">
   <div class="brand">
     <div class="title">X06 Decoder</div>
-  </div>
-  <div class="top-controls">
-    <button id="btnStart">Start</button>
-    <button id="btnStop" disabled>Stop</button>
   </div>
 </header>
 
@@ -24,6 +20,10 @@
       <div class="row">
         <select id="selInput"></select>
         <button id="btnRefresh" class="ghost">↻</button>
+        <div class="top-controls">
+          <button id="btnStart">Start</button>
+          <button id="btnStop" disabled>Stop</button>
+      </div>
       </div>
       <div class="row">
         <label class="toggle"><input type="checkbox" id="chkFft8192" />FFT 8192</label>
@@ -56,7 +56,6 @@
 
       <div class="buffer" id="buffer">—</div>
       <div class="result" id="result">—</div>
-      <div class="detail" id="stationDetail">—</div>
       <div class="hint" id="qualityHint">Start drücken und Mikrofonzugriff erlauben.</div>
     </div>
 
@@ -106,6 +105,20 @@
     </div>
   </section>
 </main>
+
+<div class="footer">
+  <span class="info">
+    X06 Tone Sequence Decoder · Web Audio FFT
+  </span>
+  <a
+    class="gitlink"
+    href="https://github.com/jan-niklas-schneider/x06-decoder"
+    target="_blank"
+    rel="noopener"
+  >
+    GitHub
+  </a>
+</div>
 
 <script src="app.js"></script>
 </body>
