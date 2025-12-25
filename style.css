@@ -123,3 +123,17 @@ canvas{flex:1;min-height:0;width:100%;border-radius:12px;background:var(--btn2);
   height: 14px;
   opacity: 0.55;
 }
+
+.footer .source {
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.footer .source a {
+  color: #9fb4ff;
+  text-decoration: none;
+}
+
+.footer .source a:hover {
+  text-decoration: underline;
+}

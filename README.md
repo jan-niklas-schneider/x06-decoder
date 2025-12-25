@@ -126,6 +126,15 @@ http://localhost:8000
 
 ---
 
+## Data Source
+
+The station database is based on publicly available information from:
+
+https://priyom.org/diplomatic-stations/russia/x06
+
+This project is for educational and technical demonstration purposes.
+All rights to the original data remain with the respective authors.
+
 ## License
 
 MIT License.
