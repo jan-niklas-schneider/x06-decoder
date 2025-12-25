@@ -365,6 +365,8 @@ function renderDbTable(){
     <tr data-seq="${s.sequence}">
       <td><b>${s.sequence}</b></td>
       <td>${esc(s.target)}</td>
+      <td>${esc(s.daytime)}</td>
+      <td>${esc(s.nighttime)}</td>
     </tr>
   `).join("");
 
