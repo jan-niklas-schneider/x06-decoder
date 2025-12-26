@@ -1,5 +1,7 @@
 {
   "schema_version": 1,
+  "_license": "CC BY-NC-SA 4.0 — data derived from priyom.org",
+  "_source": "https://priyom.org/diplomatic-stations/russia/x06",
   "signal": {
     "name": "X06 6-tone MFSK",
     "tone_duration_ms": 333.333,

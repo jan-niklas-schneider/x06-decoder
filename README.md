@@ -126,14 +126,13 @@ http://localhost:8000
 
 ---
 
-## Data Source
+## Data License
 
-The station database is based on publicly available information from:
+The station database used in this project is derived from publicly available
+information provided by priyom.org and is licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 https://priyom.org/diplomatic-stations/russia/x06
-
-This project is for educational and technical demonstration purposes.
-All rights to the original data remain with the respective authors.
 
 ## License
 
